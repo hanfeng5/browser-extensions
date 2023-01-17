@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "decision-maker",
+    "description": "helps the user to make the decision among the options",
+    "version": "1.0",
+    "action": {
+        "default_popup": "popup/popup.html",
+        "default_icon": "images/8ball.png"
+    },
+    
+
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*/*"
+            ],
+            "js": [
+                "content-scripts/block.js"
+            ],
+            "css": [
+                "content-scripts/block.css"
+            ]
+        }
+    ]
+}
