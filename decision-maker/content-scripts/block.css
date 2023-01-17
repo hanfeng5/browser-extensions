@@ -14,6 +14,8 @@
 
   /* Set color to inherit from container */
   background-color: inherit;
+  /* background-color: antiquewhite; */
+  opacity: 0.9;
 
   /* Make it resizable */
   resize: both;
@@ -22,10 +24,12 @@
 
 .blocker-block:hover * {
   display: block;
+  opacity: 1;
 }
 
 .blocker-block:hover {
   outline: 1px solid black;
+  opacity: 1;
 }
 
 .invisible {
