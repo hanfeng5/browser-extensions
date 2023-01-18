@@ -66,6 +66,6 @@ function renderBlocks() {
 // Add a message listener that sets the value of "replace"
 chrome.runtime.onMessage.addListener((request) => {
   showBlocks = request["enable"];
-  if (request["addBlock"]) addBlock();
+  if (request["addYesNoButton"]) addBlock();
   renderBlocks();
 });
