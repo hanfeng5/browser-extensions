@@ -1,15 +1,16 @@
-const checkbox = document.getElementById("enable");
+// const checkbox = document.getElementById("enable");
 const addYesNoButton = document.getElementById("add-YesNo");
 const addOption = document.getElementById("add-option");
 
 // Add event listeners to the checkbox and button
-checkbox.addEventListener("change", (e) => updateContentScript(false));
-addYesNoButton.addEventListener("click", (e) => updateContentScript(true));
-addOption.addEventListener("click", (e) => updateContentScript(true));
+// checkbox.addEventListener("change", (e) => updateContentScript(false));
+addYesNoButton.addEventListener("click", (e) => updateContentScript(true,false));
+addOption.addEventListener("click", (e) => updateContentScript(false,true));
 
 
-async function updateContentScript(clicked) {
-  const message = { enable: checkbox.checked, addYesNoButton: clicked, addOption: clicked };
+async function updateContentScript(YesNo, Option) {
+  // const message = { enable: checkbox.checked, addYesNoButton: clicked, addOption: clicked };
+  const message = {addYesNoButton: YesNo, addOption: Option };
   const [tab] = await chrome.tabs.query({
     active: true,
     lastFocusedWindow: true,
