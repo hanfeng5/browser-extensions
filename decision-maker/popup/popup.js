@@ -8,10 +8,8 @@ addYesNoButton.addEventListener("click", (e) => updateContentScript(true));
 addOption.addEventListener("click", (e) => updateContentScript(true));
 
 
-async function updateContentScript(addBlock) {
-  // Sends a message to the content script with an object that has the
-  // current value of the checkbox and a boolean (whether to add a block)
-  const message = { enable: checkbox.checked, addYesNoButton: addBlock, addOption: addBlock };
+async function updateContentScript(clicked) {
+  const message = { enable: checkbox.checked, addYesNoButton: clicked, addOption: clicked };
   const [tab] = await chrome.tabs.query({
     active: true,
     lastFocusedWindow: true,

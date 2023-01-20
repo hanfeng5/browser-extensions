@@ -110,7 +110,7 @@ chrome.runtime.onMessage.addListener((request) => {
   // showBlocks = request["enable"];
   if (request["addYesNoButton"]) YesNoDecision();
 
-  if (request=["addOption"]){
+  if (request["addOption"]){
     let input = Number(window.prompt("How many options do you have?"));
     OptionDecision(input);
   } 
