@@ -21,6 +21,29 @@
   resize: both;
   overflow: auto;
 }
+.blocker-block-option-based {
+  /* Positioning for children */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  /* Specify initial position and dimensions */
+  position: absolute;
+  top: calc(50vh - 150px);
+  left: calc(50vw - 150px);
+  height: 450px;
+  width: 450px;
+
+  /* Set color to inherit from container */
+  background-color: inherit;
+  /* background-color: antiquewhite; */
+  opacity: 0.9;
+
+  /* Make it resizable */
+  resize: both;
+  overflow: auto;
+}
 
 .blocker-block:hover * {
   display: block;

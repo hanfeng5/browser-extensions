@@ -5,10 +5,45 @@ const blockContainer = document.createElement("div");
 blockContainer.classList.add("blockContainer");
 document.body.appendChild(blockContainer);
 
+function YesNoDecision() {
+  const decision = Math.floor(Math.random() * 2)
+  if (decision == 0) {
+    alert("Yes!")
+  } else {
+    alert("No...")
+  }
+}
+
+
+
+
 function addBlock() {
   // Create a div for the block
   const block = document.createElement("div");
   block.classList.add("blocker-block");
+
+  // Create the drag handle
+  const dragButton = document.createElement("button");
+  dragButton.innerText = "drag";
+  makeDraggable(dragButton);
+
+  // Create the delete button
+  const deleteButton = document.createElement("button");
+  deleteButton.innerText = "remove";
+  deleteButton.addEventListener("click", deleteParent);
+
+  // Add the delete button and drag handle to the block
+  block.appendChild(deleteButton);
+  block.appendChild(dragButton);
+
+  // Add the block to the block container
+  blockContainer.appendChild(block);
+}
+
+function addOptionBlock() {
+  // Create a div for the block
+  const block = document.createElement("div");
+  block.classList.add("blocker-block-option-based");
 
   // Create the drag handle
   const dragButton = document.createElement("button");
@@ -65,7 +100,8 @@ function renderBlocks() {
 
 // Add a message listener that sets the value of "replace"
 chrome.runtime.onMessage.addListener((request) => {
-  showBlocks = request["enable"];
-  if (request["addYesNoButton"]) addBlock();
-  renderBlocks();
+  // showBlocks = request["enable"];
+  if (request["addYesNoButton"]) YesNoDecision();
+  if (request=["addOption"]) addBlock();
+  // renderBlocks();
 });
