@@ -3,14 +3,18 @@ body {
   margin: 0;
   font-size: 1rem;
   user-select: none;
+  font-family: "Open Sans", Helvetica, sans-serif;
 }
 
 .popup-title {
   font-weight: 900;
-  background-color: rgb(208, 58, 138);
+  background-color: #fa9500;
   color: white;
   width: 100%;
   padding: 5px;
+  font-family: 'Permanent Marker', cursive;
+  font-size: x-large;
+  text-align: center;
 }
 
 .checkbox-container {
@@ -30,4 +34,26 @@ body {
 
 button {
   width: 100%;
+  justify-content: center;
+  appearance: button;
+  background-color: #1899D6;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: din-round,sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  line-height: 20px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  outline: none;
+  overflow: visible;
+  padding: 13px 16px;
+  text-align: center;
+  text-transform: uppercase;
 }
